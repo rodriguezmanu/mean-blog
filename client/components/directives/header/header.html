@@ -12,13 +12,13 @@
         <div id="navbar" class="navbar-collapse collapse in">
             <ul class="nav navbar-nav">
                 <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}">
-                    <a href="/signup">Sign up</a>
+                    <a ui-sref="signup">Sign up</a>
                 </li>
                 <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}">
-                    <a href="/login">Login</a>
+                    <a ui-sref="login">Login</a>
                 </li>
                 <li ng-show="isLoggedIn()" ng-class="{active: isActive('/blog')}">
-                    <a href="/blog">Blog</a>
+                    <a ui-sref="blog">Blog</a>
                 </li>
                 <li class="dropdown open" ng-show="isLoggedIn()">
                     <a href="#" class="dropdown-toggle user" data-toggle="dropdown" role="button">
@@ -27,10 +27,10 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li ng-class="{active: isActive('/settings')}">
-                            <a href="/settings">Change Password</a>
+                            <a ui-sref="password-update">Change Password</a>
                         </li>
                         <li ng-class="{active: isActive('/admin')}">
-                            <a href="/admin">Admin</a>
+                            <a ui-sref="users">Users Manager</a>
                         </li>
                         <li ng-class="{active: isActive('/logout')}">
                             <a href="" ng-click="logout()">Logout</a>

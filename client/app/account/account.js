@@ -21,12 +21,21 @@ angular.module('DemoApp')
                 }
             }
         })
-        .state('settings', {
-            url: '/settings',
+        .state('users', {
+            url: '/users',
             views: {
                 'main@': {
-                    templateUrl: 'app/account/settings/settings.html',
-                    controller: 'SettingsCtrl',
+                    templateUrl: 'app/account/users/users.html',
+                    controller: 'UsersCtrl'
+                }
+            }
+        })
+        .state('password-update', {
+            url: '/password-update',
+            views: {
+                'main@': {
+                    templateUrl: 'app/account/password-update/password-update.html',
+                    controller: 'PasswordUpdateCtrl',
                     authenticate: true
                 }
             }

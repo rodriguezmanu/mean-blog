@@ -2,7 +2,7 @@
 
 angular
     .module('DemoApp')
-    .controller('SettingsCtrl', function($scope, User, Auth) {
+    .controller('PasswordUpdateCtrl', function($scope, User, Auth) {
         $scope.errors = {};
 
         $scope.changePassword = function(form) {
