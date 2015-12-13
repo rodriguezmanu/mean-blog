@@ -5,13 +5,13 @@
         .module('DemoApp')
         .config(function ($stateProvider) {
             $stateProvider
-                .state('main', {
-                    url: '/',
+                .state('blog', {
+                    url: '/blog',
                     views: {
                         'main@': {
-                            templateUrl: 'app/main/main.html',
-                            controller: 'MainCtrl'
-                            // controllerAs: 'vm'
+                            templateUrl: 'app/blog/blog.html',
+                            controller: 'BlogCtrl',
+                            controllerAs: 'vm'
                         }
                     }
                 });
