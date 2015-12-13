@@ -25,6 +25,9 @@ header {
     }
 }
 ng-header {
+    .container {
+        padding-right: 0;
+    }
     .navbar {
         font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
         text-transform: uppercase;
@@ -55,17 +58,18 @@ ng-header {
             color: @text-main;
         }
         .navbar-brand {
-            color: @text-main;
-            &:hover,
+            color: @brand-success;
+            &:hover {
+                color: @text-main;
+            }
             &:focus {
                 color: @brand-success;
-                background-color: transparent
             }
         }
     }
 }
 
-@media(min-width:768px) {
+@media(min-width:@screen-sm-min) {
     header {
         .container {
             padding-top: 200px;
@@ -82,7 +86,7 @@ ng-header {
     }
 }
 
-@media(min-width:768px) {
+@media(min-width:@screen-sm-min) {
     .navbar-fixed-top {
         padding: 25px 0;
         -webkit-transition: padding 0.3s;
