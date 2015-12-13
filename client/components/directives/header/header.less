@@ -24,6 +24,46 @@ header {
         }
     }
 }
+ng-header {
+    .navbar {
+        font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        background-color: @brand-primary;
+        border: none;
+        a:focus {
+            outline: none;
+        }
+        .navbar-nav {
+            letter-spacing: 1px;
+            li {
+                a {
+                    color: @text-main;
+                     &:hover,
+                     &:focus {
+                        outline: none;
+                        color: @brand-success;
+                    }
+                }
+            }
+        }
+        .active > a {
+            background-color: @brand-success!important;
+        }
+        .navbar-text,
+        .fa-user {
+            color: @text-main;
+        }
+        .navbar-brand {
+            color: @text-main;
+            &:hover,
+            &:focus {
+                color: @brand-success;
+                background-color: transparent
+            }
+        }
+    }
+}
 
 @media(min-width:768px) {
     header {
@@ -53,39 +93,6 @@ header {
               -webkit-transition: all 0.3s;
               -moz-transition: all 0.3s;
               transition: all 0.3s;
-        }
-    }
-}
-ng-header {
-    .navbar {
-        font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        text-transform: uppercase;
-        font-weight: 700;
-        background-color: @brand-primary;
-        border: none;
-        a:focus {
-            outline: none;
-        }
-        .navbar-nav {
-            letter-spacing: 1px;
-            li {
-                a {
-                    color: @text-main;
-                     &:hover,
-                     &:focus {
-                        outline: none;
-                        color: @brand-success;
-                    }
-                }
-            }
-        }
-        .navbar-brand {
-            color: @text-main;
-            &:hover,
-            &:focus {
-                color: @brand-success;
-                background-color: transparent
-            }
         }
     }
 }
