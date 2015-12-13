@@ -35,3 +35,19 @@
         background-color: @color;
     }
 }
+.forms-page(@selector) {
+    .@{selector} {
+        margin-top: 50px;
+        min-height: 310px;
+        .buttons {
+            margin: 20px 0;
+        }
+    }
+
+    @media(min-width:@screen-sm-min) {
+        .@{selector} {
+            margin-top: 100px;
+            min-height: 410px;
+        }
+    }
+}
