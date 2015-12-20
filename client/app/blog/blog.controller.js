@@ -1,12 +1,15 @@
 (function() {
-'use strict';
+    'use strict';
 
-angular
-    .module('DemoApp')
-    .controller('BlogCtrl', BlogCtrl);
+    angular
+        .module('DemoApp')
+        .controller('BlogCtrl', BlogCtrl);
 
-function BlogCtrl() {
-    var vm = this;
+    BlogCtrl.$inject = ['BlogEntry'];
 
-}
+    /* @ngInject */
+    function BlogCtrl(BlogEntry) {
+        var vm = this,
+            blog = {};
+    }
 })();

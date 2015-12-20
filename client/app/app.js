@@ -10,6 +10,7 @@
             'ui.router',
             'ui.bootstrap',
             'DemoApp.footer',
-            'DemoApp.header'
+            'DemoApp.header',
+            'DemoApp.blog-factory'
         ]);
 })();
