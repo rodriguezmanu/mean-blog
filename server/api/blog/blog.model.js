@@ -4,8 +4,10 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var BlogSchema = new Schema({
-  name: String,
-  info: String,
+  title: String,
+  description: String,
+  image: String,
+  tag:  [String],
   active: Boolean
 });
 

@@ -11,6 +11,7 @@
             'ui.bootstrap',
             'DemoApp.footer',
             'DemoApp.header',
-            'DemoApp.blog-factory'
+            'DemoApp.blog-factory',
+            'textAngular'
         ]);
 })();
