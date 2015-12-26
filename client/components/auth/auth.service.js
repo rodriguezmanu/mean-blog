@@ -1,7 +1,7 @@
 // jscs:disable
 'use strict';
 
-angular.module('DemoApp')
+angular.module('DemoApp.authService')
   .factory('Auth', function Auth($location, $rootScope, $http, User, $cookieStore, $q) {
     var currentUser = {};
     if($cookieStore.get('token')) {

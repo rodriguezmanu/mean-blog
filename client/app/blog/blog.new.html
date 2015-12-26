@@ -17,7 +17,7 @@
                 <div class="row control-group" ng-class="{ 'has-success': vm.form.description.$valid && vm.submitted,'has-error': vm.form.description.$invalid && vm.submitted }">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <h5>Post</h5>
-                        <div text-angular ng-model="vm.post.description" name="description" required></div>
+                        <div text-angular ng-model="vm.post.description" required></div>
                         <p class="help-block" ng-show="vm.form.description.$error.required && vm.submitted">
                             Description is required
                         </p>

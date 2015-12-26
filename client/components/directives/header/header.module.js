@@ -2,5 +2,8 @@
     'use strict';
 
     angular
-        .module('DemoApp.header', []);
+        .module('DemoApp.header', [
+            'DemoApp.authService',
+            'DemoApp.userService'
+        ]);
 })();

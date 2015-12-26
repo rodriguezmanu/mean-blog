@@ -10,9 +10,8 @@ describe('Directive: footer', function() {
     var element,
         scope;
 
-    beforeEach(inject(function($rootScope, $httpBackend, $compile) {
+    beforeEach(inject(function($rootScope, $compile) {
         scope = $rootScope.$new();
-        testTranslate($httpBackend);
 
         element = angular.element('<ng-footer></ng-footer>');
         element = $compile(element)(scope);

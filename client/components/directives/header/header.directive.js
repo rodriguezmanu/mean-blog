@@ -7,8 +7,7 @@
             return {
                 templateUrl: 'components/directives/header/header.html',
                 restrict: 'EA',
-                controller: headerCtl,
-                link: link
+                controller: headerCtl
             };
         });
 
@@ -31,12 +30,5 @@
         $scope.isActive = function(route) {
             return route === $location.path();
         };
-    }
-
-    function link(scope, element, attr) {
-        var nav = element.find('.navbar-auto-hiding');
-        if (nav.length > 0) {
-            nav.autoHidingNavbar();
-        }
     }
 })();

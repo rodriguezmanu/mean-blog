@@ -4,15 +4,14 @@
 describe('Directive: header', function() {
 
     // load the directive's module and view
-    beforeEach(module('DemoApp'));
+    beforeEach(module('DemoApp.header'));
     beforeEach(module('components/directives/header/header.html'));
 
     var element,
         scope;
 
-    beforeEach(inject(function($rootScope, $httpBackend, $compile) {
+    beforeEach(inject(function($rootScope, $compile) {
         scope = $rootScope.$new();
-        testTranslate($httpBackend);
 
         element = angular.element('<ng-header></ng-header>');
         element = $compile(element)(scope);
@@ -23,4 +22,3 @@ describe('Directive: header', function() {
         expect(element).toBeDefined();
     });
 });
-

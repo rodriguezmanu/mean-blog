@@ -4,7 +4,7 @@
     angular
         .module('DemoApp', [
             'ngCookies',
-            'ngResource',
+            // 'ngResource',
             'ngSanitize',
             'btford.socket-io',
             'ui.router',
