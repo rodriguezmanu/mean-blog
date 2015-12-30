@@ -4,7 +4,7 @@
     angular
         .module('DemoApp', [
             'ngCookies',
-            // 'ngResource',
+            'ngResource',
             'ngSanitize',
             'btford.socket-io',
             'ui.router',
@@ -12,6 +12,8 @@
             'DemoApp.footer',
             'DemoApp.header',
             'DemoApp.blog-factory',
-            'textAngular'
+            'textAngular',
+            'DemoApp.userService',
+            'DemoApp.authService'
         ]);
 })();

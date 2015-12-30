@@ -4,7 +4,7 @@
 describe('Directive: header', function() {
 
     // load the directive's module and view
-    beforeEach(module('DemoApp.header'));
+    beforeEach(module('DemoApp'));
     beforeEach(module('components/directives/header/header.html'));
 
     var element,

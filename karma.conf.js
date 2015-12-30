@@ -30,7 +30,6 @@ module.exports = function(config) {
       'client/bower_components/rangy/rangy-core.min.js',
       'client/bower_components/rangy/rangy-selectionsaverestore.min.js',
       'client/bower_components/textAngular/dist/textAngular.min.js',
-      'client/bower_components/textAngular/dist/textAngularSetup.js',
       'client/bower_components/textAngular/dist/textAngular-sanitize.min.js'
     ],
 
