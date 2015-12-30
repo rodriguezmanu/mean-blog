@@ -13,8 +13,8 @@
                 <h1>{{post.title}}</h1>
                 <p ng-bind-html="post.description"></p>
                 <div class="row text-center buttons">
-                    <a ui-sref="blog.edit">
-                        <button class="btn btn-success btn-lg" ng-click="vm.edit(post)">EDIT</button>
+                    <a ui-sref="blog.edit({ id: post._id })">
+                        <button class="btn btn-success btn-lg">EDIT</button>
                     </a>
                     <button class="btn btn-success btn-lg"ng-click="vm.deletePost(post)">DELETE</button>
                     <hr>

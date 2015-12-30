@@ -5,6 +5,10 @@
         .factory('BlogEntry', BlogEntry);
 
     function BlogEntry($resource) {
-        return $resource('/api/blog/:id/', {id: '@_id'});
+        return $resource('/api/blog/:id/', {id: '@_id'},{
+            update: {
+                method: 'PUT'
+            }
+        });
     }
 })();

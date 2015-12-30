@@ -26,10 +26,10 @@
                     }
                 })
                 .state('blog.edit', {
-                    url: '/edit',
+                    url: '/edit/:id',
                     views: {
                         'main@': {
-                            templateUrl: 'app/blog/views/blog.edit.html',
+                            templateUrl: 'app/blog/blog.edit.html',
                             controller: 'BlogCtrl',
                             controllerAs: 'vm'
                         }
