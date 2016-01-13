@@ -1,30 +1,36 @@
-'use strict';
+(function() {
 
-angular
-    .module('DemoApp')
-    .controller('LoginCtrl', function($scope, Auth, $location, $window) {
-        $scope.user = {};
-        $scope.errors = {};
+    'use strict';
 
-        $scope.login = function(form) {
-            $scope.submitted = true;
+    angular
+        .module('DemoApp')
+        .controller('LoginCtrl', LoginCtrl);
 
-            if (form.$valid) {
+    LoginCtrl.$inject = ['Auth', '$location', '$window'];
+
+    /* @ngInject */
+    function LoginCtrl(Auth, $location, $window) {
+        var vm = this;
+
+        vm.user = {};
+        vm.errors = {};
+        vm.login = login;
+
+        function login() {
+            vm.submitted = true;
+            if (vm.form.$valid) {
                 Auth.login({
-                    email: $scope.user.email,
-                    password: $scope.user.password
+                    email: vm.user.email,
+                    password: vm.user.password
                 })
                 .then(function() {
                     // Logged in, redirect to home
                     $location.path('/');
                 })
                 .catch(function(err) {
-                    $scope.errors.other = err.message;
+                    vm.errors.other = err.message;
                 });
             }
-        };
-
-        $scope.loginOauth = function(provider) {
-            $window.location.href = '/auth/' + provider;
-        };
-    });
+        }
+    }
+})();

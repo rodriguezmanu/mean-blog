@@ -1,22 +1,34 @@
-'use strict';
+(function() {
 
-angular
-    .module('DemoApp')
-    .controller('PasswordUpdateCtrl', function($scope, User, Auth) {
-        $scope.errors = {};
+    'use strict';
 
-        $scope.changePassword = function(form) {
-            $scope.submitted = true;
-            if (form.$valid) {
-                Auth.changePassword($scope.user.oldPassword, $scope.user.newPassword)
-                .then(function() {
-                    $scope.message = 'Password successfully changed.';
-                })
-                .catch(function() {
-                    form.password.$setValidity('mongoose', false);
-                    $scope.errors.other = 'Incorrect password';
-                    $scope.message = '';
-                });
+    angular
+        .module('DemoApp')
+        .controller('PasswordUpdateCtrl', PasswordUpdateCtrl);
+
+    PasswordUpdateCtrl.$inject = ['Auth'];
+
+    /* @ngInject */
+    function PasswordUpdateCtrl(Auth) {
+        var vm = this;
+        vm.errors = {};
+
+        vm.changePassword = changePassword;
+
+        function changePassword() {
+            vm.submitted = true;
+            if (vm.form.$valid) {
+                vm.submitted = false;
+                Auth.changePassword(vm.user.oldPassword, vm.user.newPassword)
+                    .then(function() {
+                        vm.message = 'Password successfully changed.';
+                    })
+                    .catch(function() {
+                        vm.form.password.$setValidity('mongoose', false);
+                        vm.errors.other = 'Incorrect password';
+                        vm.message = '';
+                    });
             }
-        };
-    });
+        }
+    }
+})();

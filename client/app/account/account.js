@@ -8,7 +8,8 @@ angular.module('DemoApp')
             views: {
                 'main@': {
                     templateUrl: 'app/account/login/login.html',
-                    controller: 'LoginCtrl'
+                    controller: 'LoginCtrl',
+                    controllerAs: 'vm'
                 }
             }
         })
@@ -32,11 +33,12 @@ angular.module('DemoApp')
         })
         .state('password-update', {
             url: '/password-update',
+            authenticate: true,
             views: {
                 'main@': {
                     templateUrl: 'app/account/password-update/password-update.html',
                     controller: 'PasswordUpdateCtrl',
-                    authenticate: true
+                    controllerAs: 'vm'
                 }
             }
         });
