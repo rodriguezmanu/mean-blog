@@ -1,18 +1,27 @@
-'use strict';
+(function() {
+    'use strict';
 
-angular.module('DemoApp')
-    .controller('SignupCtrl', function($scope, Auth, $location, $window) {
-        $scope.user = {};
-        $scope.errors = {};
+    angular
+        .module('DemoApp')
+        .controller('SignupCtrl', SignupCtrl);
 
-        $scope.register = function(form) {
-            $scope.submitted = true;
+    /* @ngInject */
+    SignupCtrl.$inject = ['Auth', '$location'];
 
-            if (form.$valid) {
+    function SignupCtrl(Auth, $location) {
+        var vm = this;
+
+        vm.user = {};
+        vm.errors = {};
+        vm.register = register;
+
+        function register() {
+            vm.submitted = true;
+            if (vm.form.$valid) {
                 Auth.createUser({
-                    name: $scope.user.name,
-                    email: $scope.user.email,
-                    password: $scope.user.password
+                    name: vm.user.name,
+                    email: vm.user.email,
+                    password: vm.user.password
                 })
                 .then(function() {
                     // Account created, redirect to home
@@ -20,14 +29,14 @@ angular.module('DemoApp')
                 })
                 .catch(function(err) {
                     err = err.data;
-                    $scope.errors = {};
+                    vm.errors = {};
 
-                    // Update validity of form fields that match the mongoose errors
                     angular.forEach(err.errors, function(error, field) {
-                        form[field].$setValidity('mongoose', false);
-                        $scope.errors[field] = error.message;
+                        vm.form[field].$setValidity('mongoose', false);
+                        vm.errors[field] = error.message;
                     });
                 });
             }
-        };
-    });
+        }
+    }
+})();

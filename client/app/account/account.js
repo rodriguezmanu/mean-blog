@@ -18,7 +18,8 @@ angular.module('DemoApp')
             views: {
                 'main@': {
                     templateUrl: 'app/account/signup/signup.html',
-                    controller: 'SignupCtrl'
+                    controller: 'SignupCtrl',
+                    controllerAs: 'vm'
                 }
             }
         })
@@ -27,7 +28,8 @@ angular.module('DemoApp')
             views: {
                 'main@': {
                     templateUrl: 'app/account/users/users.html',
-                    controller: 'UsersCtrl'
+                    controller: 'UsersCtrl',
+                    controllerAs: 'vm'
                 }
             }
         })

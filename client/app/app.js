@@ -14,6 +14,7 @@
             'DemoApp.blog-factory',
             'textAngular',
             'DemoApp.userService',
-            'DemoApp.authService'
+            'DemoApp.authService',
+            'DemoApp.limitHtml'
         ]);
 })();

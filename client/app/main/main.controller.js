@@ -3,28 +3,23 @@
 
 angular
     .module('DemoApp')
-    .controller('MainCtrl', function ($scope, $http, socket) {
-        $scope.awesomeThings = [];
+    .controller('MainCtrl', MainCtrl);
 
-        $http.get('/api/things').success(function(awesomeThings) {
-            $scope.awesomeThings = awesomeThings;
-            socket.syncUpdates('thing', $scope.awesomeThings);
-        });
+    MainCtrl.$inject = ['BlogEntry'];
 
-        $scope.addThing = function() {
-            if ($scope.newThing === '') {
-                return;
-            }
-            $http.post('/api/things', {name: $scope.newThing});
-            $scope.newThing = '';
-        };
+    /* @ngInject */
+    function MainCtrl(BlogEntry) {
+        var vm = this;
 
-        $scope.deleteThing = function(thing) {
-            $http.delete('/api/things/' + thing._id);
-        };
+        vm.getPost = getPost;
+        vm.getPosts = getPosts();
 
-        $scope.$on('$destroy', function () {
-            socket.unsyncUpdates('thing');
-        });
-    });
+        function getPosts() {
+            vm.posts = BlogEntry.query();
+        }
+
+        function getPost() {
+            return BlogEntry.get({id: $stateParams.id});
+        }
+    }
 })();

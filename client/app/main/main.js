@@ -10,8 +10,8 @@
                     views: {
                         'main@': {
                             templateUrl: 'app/main/main.html',
-                            controller: 'MainCtrl'
-                            // controllerAs: 'vm'
+                            controller: 'MainCtrl',
+                            controllerAs: 'vm'
                         }
                     }
                 });
