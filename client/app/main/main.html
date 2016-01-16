@@ -11,6 +11,7 @@
             <div class="row">
                 <div class="col-sm-12 portfolio-item" ng-repeat="post in vm.posts">
                     <h1>{{post.title}}</h1>
+                    <h5>{{post.date | date:'medium'}}</h5>
                     <p ng-bind-html="post.description | limitHtml:100"></p>
                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                         <button class="btn btn-lg btn-outline">

@@ -24,6 +24,7 @@
         function editPost() {
             vm.submitted = true;
             if (vm.form.$valid) {
+                vm.post.date = moment();
                 BlogEntry.update({id: vm.post._id}, vm.post, function() {
                     $state.go('blog');
                 });
@@ -47,6 +48,7 @@
         function addNewPost() {
             vm.submitted = true;
             if (vm.form.$valid) {
+                vm.post.date = moment();
                 BlogEntry.save(vm.post, function() {
                     $state.go('blog');
                 });

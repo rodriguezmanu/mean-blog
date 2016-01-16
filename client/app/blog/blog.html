@@ -11,7 +11,8 @@
         <div class="col-lg-8 col-lg-offset-2">
             <div ng-repeat="post in vm.posts" class="post">
                 <h1>{{post.title}}</h1>
-                <p ng-bind-html="post.description"></p>
+                <h5>{{post.date | date:'medium'}}</h5>
+                <p ng-bind-html="post.description | limitHtml:150"></p>
                 <div class="row text-center buttons">
                     <a ui-sref="blog.edit({ id: post._id })">
                         <button class="btn btn-success btn-lg">EDIT</button>

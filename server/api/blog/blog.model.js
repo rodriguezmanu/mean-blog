@@ -8,7 +8,8 @@ var BlogSchema = new Schema({
   description: String,
   image: String,
   tag:  [String],
-  active: Boolean
+  active: Boolean,
+  date: Date
 });
 
 module.exports = mongoose.model('Blog', BlogSchema);
