@@ -1,14 +1,14 @@
 (function() {
-'use strict';
+    'use strict';
 
-angular
-    .module('DemoApp')
-    .controller('MainCtrl', MainCtrl);
+    angular
+        .module('DemoApp')
+        .controller('MainCtrl', MainCtrl);
 
-    MainCtrl.$inject = ['BlogEntry'];
+    MainCtrl.$inject = ['BlogEntry', '$stateParams'];
 
     /* @ngInject */
-    function MainCtrl(BlogEntry) {
+    function MainCtrl(BlogEntry, $stateParams) {
         var vm = this;
 
         vm.getPost = getPost;
