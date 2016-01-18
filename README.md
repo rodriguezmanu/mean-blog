@@ -1,4 +1,4 @@
-### To start working with the project run:
+### To start working with this project:
 
 Install:
 
@@ -8,8 +8,6 @@ Install:
 
 * bower by npm - npm install -g bower
 * grunt by npm - npm install -g grunt-cli
-* yoeman by npm -npm install -g yo
-* fullstrack angular by npm - npm install -g generator-angular-fullstack
 
 Run:
 
@@ -18,7 +16,3 @@ Run:
 * npm install
 * bower install
 * grunt serve(to init the server)
-
-Styling angularjs:
-* https://github.com/toddmotto/angularjs-styleguide
-* https://github.com/johnpapa/angular-styleguide
