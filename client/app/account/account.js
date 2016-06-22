@@ -25,6 +25,7 @@ angular.module('DemoApp')
         })
         .state('users', {
             url: '/users',
+            authenticate: true,
             views: {
                 'main@': {
                     templateUrl: 'app/account/users/users.html',

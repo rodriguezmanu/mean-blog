@@ -7,6 +7,7 @@
             $stateProvider
                 .state('blog', {
                     url: '/blog',
+                    authenticate: true,
                     views: {
                         'main@': {
                             templateUrl: 'app/blog/blog.html',
@@ -17,6 +18,7 @@
                 })
                 .state('blog.new', {
                     url: '/new',
+                    authenticate: true,
                     views: {
                         'main@': {
                             templateUrl: 'app/blog/blog.new.html',
@@ -27,6 +29,7 @@
                 })
                 .state('blog.edit', {
                     url: '/edit/:id',
+                    authenticate: true,
                     views: {
                         'main@': {
                             templateUrl: 'app/blog/blog.edit.html',
