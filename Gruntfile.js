@@ -416,7 +416,7 @@ module.exports = function(grunt) {
           },
           prod : {
             options : {
-              remote : 'git@heroku.com:DemoApp-master.git',
+              remote : 'git@heroku.com:mean-blog-app.git',
               branch : 'master'
             }
           },
